@@ -1,19 +1,54 @@
-Android Barcode Scanner
-A simple app that scans product barcodes and displays their name and image from a local data file.
+# Android Barcode Scanner
 
-##Setup
-To run this project, you must provide your own data:
-
-###Add Data File: 
-
-Create the directory app/src/main/res/raw and place your barcode_list.txt file inside. The file must be a CSV with this exact format:
-
-Barcode,InventoryCode,InventoryName,ImageName
-905202420242028,SKIRT-001,Asymmetrical Skirt,asymmetrical_skirt.png
+A simple, modern Android app that scans product barcodes using the device camera and displays product information from a local data source.
 
 
-###Add Image Files: Place all product images in the app/src/main/res/drawable/ folder.
 
-Important: Image names must be lowercase and use underscores instead of spaces or hyphens (e.g., asymmetrical_skirt.png).
+## Features
 
-Build and Run the project in Android Studio.
+-   **Real-time Scanning**: Uses CameraX and Google ML Kit for fast, on-device barcode detection.
+-   **Local Data Lookup**: Looks up scanned barcodes in a user-provided CSV file.
+-   **Product Display**: Shows the product name and image after a successful scan.
+-   **Error Handling**: Displays a placeholder if an image is not found, preventing crashes.
+
+---
+
+## Getting Started
+
+To get a local copy up and running, you must provide your own data by following these steps.
+
+### **1. Add the Product Data File**
+
+The app reads product information from a CSV file.
+
+-   First, create the required directory:
+    ```
+    app/src/main/res/raw/
+    ```
+-   Inside this `raw` directory, place your data file named `barcode_list.txt`.
+-   The file **must** use the following CSV format:
+
+    ```csv
+    Barcode,InventoryCode,InventoryName,ImageName
+    905202420242028,SKIRT-001,Asymmetrical Skirt,asymmetrical_skirt.png
+    ```
+
+### **2. Add Product Images**
+
+-   Place all your product image files inside the following directory:
+    ```
+    app/src/main/res/drawable/
+    ```
+
+> **Important:** Image filenames are used as resource IDs in Android. They **must be lowercase** and use **underscores `_`** instead of spaces or hyphens (e.g., `asymmetrical_skirt.png`).
+
+### **3. Build and Run**
+
+Open the project in Android Studio and run it on an emulator or a physical device.
+
+---
+
+
+## 📄 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
